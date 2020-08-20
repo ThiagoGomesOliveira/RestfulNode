@@ -1,0 +1,22 @@
+{
+  "name": "restfulnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoGomesOliveira/RestfulNode.git"
+  },
+  "author": "Thiago Gomes Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoGomesOliveira/RestfulNode/issues"
+  },
+  "homepage": "https://github.com/ThiagoGomesOliveira/RestfulNode#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
