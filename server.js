@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 consign()
   .include('routes')
+  .include('utils')
   .into(app)
 
 

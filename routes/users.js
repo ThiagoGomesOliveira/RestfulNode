@@ -6,35 +6,32 @@ let db = new Nedb({
 
 module.exports = (app) => {
 
-    app.get('/users', (req, res) => {
+    let route = app.route('/users')
+    route.get((req, res) => {
 
-         // comando equivalente ao select sem where no banco e ordenando pelo nome.
-        db.find({}).sort({name: 1}).exec((err,users) =>{
+        // comando equivalente ao select sem where no banco e ordenando pelo nome.
+        db.find({}).sort({ name: 1 }).exec((err, users) => {
 
-            if(err){
-                console.log('error'+ err);
-                res.status(400);
-                res.json({error: err});
-            }else{
+            if (err) {
+                app.utils.error.send(err, req, res);
+            } else {
                 res.status(200);
                 res.setHeader('Content-type', 'Application/json');
-                res.json([{users}])
+                res.json([{ users }])
             }
 
         })
 
-      
+
     });
 
 
-    app.post('/users', (req, res) => {
+    route.post((req, res) => {
 
         db.insert(req.body, (err, user) => {
 
             if (err) {
-                res.status(400);
-                res.json({ error: err })
-                console.log("error", err);
+                app.utils.error.send(err, req, res);
             } else {
                 res.status(200);
                 res.json(user)
