@@ -1,13 +1,12 @@
-let express = require('express')
-let routes = express.Router();
+module.exports =  (app) =>{
 
-
-routes.get('/', (req,res) =>{
+    app.get('/', (req,res) =>{
  
-    res.statusCode = 200;
-    res.setHeader('Content-type','text/html');
-    res.send('<h1>RestFul</h1>')
+        res.statusCode = 200;
+        res.setHeader('Content-type','text/html');
+        res.send('<h1>RestFul</h1>')
+    
+    });
 
-});
 
-module.exports = routes;
+}

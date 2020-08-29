@@ -1,13 +1,11 @@
 const  express = require('express');
+const consign = require('consign');
 
-const routeIndex = require('./routes/index');
-const routeUsers = require('./routes/users')
 
 const app = express();
-
-
-app.use(routeIndex);
-app.use('/users',routeUsers);
+consign()
+  .include('routes')
+  .into(app)
 
 
 
