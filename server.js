@@ -11,8 +11,6 @@ app.use('/users',routeUsers);
 
 
 
-
-
 app.listen('3000','127.0.0.1', (req,res) =>{
 
     console.log("Servidor rodando...!");
